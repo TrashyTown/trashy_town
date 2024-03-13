@@ -82,7 +82,7 @@ class GameMapsState extends Equatable {
               displayName: '5',
               path: Assets.tiles.map5,
               score: null,
-              ratingSteps: (45, 60, 120),
+              ratingSteps: (25, 80, 120),
               locked: true,
             ),
             GameMapIdentifier.map6: GameMap._(
@@ -106,7 +106,7 @@ class GameMapsState extends Equatable {
               displayName: '8',
               path: Assets.tiles.map8,
               score: null,
-              ratingSteps: (25, 80, 120),
+              ratingSteps: (45, 60, 120),
               locked: true,
             ),
             GameMapIdentifier.map9: GameMap._(
