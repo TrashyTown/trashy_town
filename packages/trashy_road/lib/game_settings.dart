@@ -6,7 +6,7 @@ abstract class GameSettings {
   static final Vector2 gridDimensions = UnmodifiableVector2View(128, 64);
 }
 
-extension TrashyRoadVector on Vector2 {
+extension TrashyTownVector on Vector2 {
   /// Snaps this to the grid.
   ///
   /// If this is being used to determine the position of a [Component],

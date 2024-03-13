@@ -21,9 +21,9 @@ export 'models/models.dart';
 export 'view/view.dart';
 export 'widgets/widgets.dart';
 
-class TrashyRoadGame extends FlameGame
+class TrashyTownGame extends FlameGame
     with HasKeyboardHandlerComponents, HasCollisionDetection {
-  TrashyRoadGame({
+  TrashyTownGame({
     required GameBloc gameBloc,
     required this.audioBloc,
     required this.random,
@@ -76,12 +76,12 @@ class TrashyRoadGame extends FlameGame
       tiledMap.height.toDouble() * GameSettings.gridDimensions.y,
     );
 
-    final trashyRoadWorld = TrashyRoadWorld(tileMap: tiledMap);
+    final trashyTownWorld = TrashyTownWorld(tileMap: tiledMap);
     final blocProvider = FlameBlocProvider<GameBloc, GameState>(
       create: () => _gameBloc,
       children: [
         ZCanvasComponent(
-          children: [trashyRoadWorld],
+          children: [trashyTownWorld],
         ),
       ],
     );
@@ -90,8 +90,8 @@ class TrashyRoadGame extends FlameGame
 
     // TODO(alestiago): Refactor this and properly await loading.
     unawaited(
-      trashyRoadWorld.loaded.then((_) async {
-        _player = trashyRoadWorld.children.whereType<Player>().first;
+      trashyTownWorld.loaded.then((_) async {
+        _player = trashyTownWorld.children.whereType<Player>().first;
         final cameraMan = _CameraMan(actor: _player!);
         await world.add(cameraMan);
         camera.follow(cameraMan);
@@ -164,7 +164,7 @@ class TrashyRoadGame extends FlameGame
 }
 
 class _CameraMan extends PositionComponent
-    with HasGameReference<TrashyRoadGame> {
+    with HasGameReference<TrashyTownGame> {
   _CameraMan({required this.actor});
 
   final PositionComponent actor;
@@ -184,6 +184,6 @@ class _CameraMan extends PositionComponent
   void _updatePosition() {
     position
       ..setFrom(actor.position)
-      ..y -= game.camera.viewport.size.y / 4.25;
+      ..y -= game.camera.viewport.size.y / 8;
   }
 }

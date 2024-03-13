@@ -5,7 +5,7 @@ import 'package:flame/effects.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:trashy_road/src/game/game.dart';
 
-class DroppingBehavior extends Behavior with HasGameReference<TrashyRoadGame> {
+class DroppingBehavior extends Behavior with HasGameReference<TrashyTownGame> {
   DroppingBehavior({
     required this.drop,
     required this.minDuration,

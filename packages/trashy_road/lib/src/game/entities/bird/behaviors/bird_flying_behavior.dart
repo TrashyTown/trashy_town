@@ -3,7 +3,7 @@ import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:trashy_road/src/game/game.dart';
 
 class BirdFlyingBehavior extends Behavior<Bird>
-    with HasGameReference<TrashyRoadGame> {
+    with HasGameReference<TrashyTownGame> {
   /// The speed multiplier for the bird.
   static const birdSpeedMultiplier = 30;
 

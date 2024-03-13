@@ -64,7 +64,7 @@ class _GameView extends StatefulWidget {
 }
 
 class _GameViewState extends State<_GameView> {
-  TrashyRoadGame? _game;
+  TrashyTownGame? _game;
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +88,7 @@ class _GameViewState extends State<_GameView> {
             children: [
               const Positioned.fill(child: _GameBackground()),
               Align(
-                child: TrashyRoadGameWidget(
+                child: TrashyTownGameWidget(
                   onGameCreated: (game) => _game = game,
                 ),
               ),

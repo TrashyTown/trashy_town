@@ -14,7 +14,7 @@ final class PlayerMovingBehavior extends Behavior<Player>
     with
         FlameBlocReader<GameBloc, GameState>,
         ParentIsA<Player>,
-        HasGameReference<TrashyRoadGame> {
+        HasGameReference<TrashyTownGame> {
   /// The delay between player moves for each item in the inventory.
   static const delayPerItem = Duration(milliseconds: 25);
 
