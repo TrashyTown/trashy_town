@@ -5,12 +5,12 @@ import 'package:flame/components.dart';
 import 'package:flutter/rendering.dart';
 import 'package:trashy_road/src/game/game.dart';
 
-/// {@template DebugTrashyRoadGame}
-/// A [TrashyRoadGame] that is used for debugging purposes.
+/// {@template DebugTrashyTownGame}
+/// A [TrashyTownGame] that is used for debugging purposes.
 /// {@endtemplate}
-class DebugTrashyRoadGame extends TrashyRoadGame {
-  /// {@macro DebugTrashyRoadGame}
-  DebugTrashyRoadGame({
+class DebugTrashyTownGame extends TrashyTownGame {
+  /// {@macro DebugTrashyTownGame}
+  DebugTrashyTownGame({
     required super.gameBloc,
     required super.audioBloc,
     required super.random,

@@ -1,6 +1,6 @@
-# Contributing to Trashy Road
+# Contributing to Trashy Town
 
-This document describes the steps and information to contribute to `TrashyRoad`.
+This document describes the steps and information to contribute to `TrashyTown`.
 
 ## Assets
 

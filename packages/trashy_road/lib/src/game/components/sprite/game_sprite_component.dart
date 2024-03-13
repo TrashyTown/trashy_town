@@ -4,7 +4,7 @@ import 'package:flame/components.dart';
 import 'package:trashy_road/src/game/game.dart';
 
 class GameSpriteComponent extends SpriteComponent
-    with HasGameReference<TrashyRoadGame> {
+    with HasGameReference<TrashyTownGame> {
   GameSpriteComponent.fromPath({
     required String spritePath,
     super.position,

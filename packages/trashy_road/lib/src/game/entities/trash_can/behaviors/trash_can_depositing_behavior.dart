@@ -13,7 +13,7 @@ final _random = math.Random(0);
 class TrashCanDepositingBehavior extends Behavior<TrashCan>
     with
         FlameBlocReader<GameBloc, GameState>,
-        HasGameReference<TrashyRoadGame> {
+        HasGameReference<TrashyTownGame> {
   /// The maximum amount of trash that the [TrashCan] can hold.
   static const int _maximumCapacity = 999;
 

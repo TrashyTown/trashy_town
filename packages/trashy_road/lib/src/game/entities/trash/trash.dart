@@ -37,7 +37,7 @@ enum TrashType {
 /// Trash is usually scattered around the road and the player has to pick it up
 /// to keep the map clean.
 class Trash extends PositionedEntity
-    with HasGameReference<TrashyRoadGame>, ZIndex, Untraversable {
+    with HasGameReference<TrashyTownGame>, ZIndex, Untraversable {
   Trash._({
     required Vector2 position,
     required this.trashType,
@@ -249,7 +249,7 @@ enum PaperStyle {
 ///
 /// Renders the plastic bottle.
 class _PlasticSpriteGroup extends PositionComponent
-    with HasGameRef<TrashyRoadGame> {
+    with HasGameRef<TrashyTownGame> {
   _PlasticSpriteGroup._({
     required String spritePath,
     super.scale,
@@ -319,7 +319,7 @@ class _PlasticSpriteGroup extends PositionComponent
 ///
 /// Renders an apple core.
 class _OrganicSpriteGroup extends PositionComponent
-    with HasGameRef<TrashyRoadGame> {
+    with HasGameRef<TrashyTownGame> {
   _OrganicSpriteGroup._({
     required String spritePath,
   }) : super(
@@ -377,7 +377,7 @@ class _OrganicSpriteGroup extends PositionComponent
 ///
 /// Renders a stack of paper.
 class _PaperSpriteGroup extends PositionComponent
-    with HasGameRef<TrashyRoadGame> {
+    with HasGameRef<TrashyTownGame> {
   _PaperSpriteGroup._({
     required String spritePath,
   }) : super(
