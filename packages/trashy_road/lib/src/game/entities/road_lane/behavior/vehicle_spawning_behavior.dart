@@ -8,7 +8,7 @@ import 'package:trashy_road/src/game/game.dart';
 /// Spawns vehicles in the road lane.
 /// {@endtemplate}
 class VehicleSpawningBehavior extends Behavior<RoadLane>
-    with HasGameReference<TrashyRoadGame> {
+    with HasGameReference<TrashyTownGame> {
   /// {@macro VehicleSpawningBehavior}
   VehicleSpawningBehavior();
 

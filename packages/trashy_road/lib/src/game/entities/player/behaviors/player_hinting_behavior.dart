@@ -71,7 +71,7 @@ class PlayerHintingBehavior extends Behavior<Player>
 
     _playerPositionCache.setFrom(parent.position);
 
-    final world = ancestors().whereType<TrashyRoadWorld>().first;
+    final world = ancestors().whereType<TrashyTownWorld>().first;
     _trash = world.descendants().whereType<Trash>().toSet();
     for (final trash in _trash) {
       unawaited(trash.removed.then((_) => _trash.remove(trash)));

@@ -924,14 +924,14 @@ class Assets {
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsRiveGen rive = $AssetsRiveGen();
   static const $AssetsTilesGen tiles = $AssetsTilesGen();
-  static const String trashyRoadTiledProject =
+  static const String trashyTownTiledProject =
       'assets/trashy_road.tiled-project';
-  static const String trashyRoadTiledSession =
+  static const String trashyTownTiledSession =
       'assets/trashy_road.tiled-session';
 
   /// List of all assets
   static List<String> get values =>
-      [trashyRoadTiledProject, trashyRoadTiledSession];
+      [trashyTownTiledProject, trashyTownTiledSession];
 }
 
 class AssetGenImage {

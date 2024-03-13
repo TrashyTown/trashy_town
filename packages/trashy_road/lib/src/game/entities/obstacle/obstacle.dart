@@ -266,7 +266,7 @@ class Obstacle extends PositionedEntity with Untraversable, ZIndex {
   Future<void> onLoad() async {
     await super.onLoad();
 
-    final world = ancestors().whereType<TrashyRoadWorld>().first;
+    final world = ancestors().whereType<TrashyTownWorld>().first;
     final mapEdges = world.descendants().whereType<MapEdge>().toSet();
 
     final isInMapEdge = mapEdges

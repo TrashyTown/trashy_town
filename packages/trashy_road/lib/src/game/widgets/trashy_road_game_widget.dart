@@ -11,21 +11,21 @@ import 'package:trashy_road/src/loading/loading.dart';
 
 final _random = Random(0);
 
-class TrashyRoadGameWidget extends StatefulWidget {
-  const TrashyRoadGameWidget({
+class TrashyTownGameWidget extends StatefulWidget {
+  const TrashyTownGameWidget({
     required this.onGameCreated,
     super.key,
   });
 
   /// Callback for when the game is created.
-  final void Function(TrashyRoadGame game) onGameCreated;
+  final void Function(TrashyTownGame game) onGameCreated;
 
   @override
-  State<TrashyRoadGameWidget> createState() => _TrashyRoadGameWidgetState();
+  State<TrashyTownGameWidget> createState() => _TrashyTownGameWidgetState();
 }
 
-class _TrashyRoadGameWidgetState extends State<TrashyRoadGameWidget> {
-  TrashyRoadGame? _game;
+class _TrashyTownGameWidgetState extends State<TrashyTownGameWidget> {
+  TrashyTownGame? _game;
 
   @override
   Widget build(BuildContext context) {
@@ -37,16 +37,16 @@ class _TrashyRoadGameWidgetState extends State<TrashyRoadGameWidget> {
       (GameSettings.gridDimensions.x * 11) * (1280 / 720),
     );
 
-    TrashyRoadGame gameBuilder() {
+    TrashyTownGame gameBuilder() {
       final game = kDebugMode
-          ? DebugTrashyRoadGame(
+          ? DebugTrashyTownGame(
               gameBloc: gameBloc,
               images: loadingBloc.images,
               audioBloc: audioBloc,
               resolution: resolution,
               random: _random,
             )
-          : TrashyRoadGame(
+          : TrashyTownGame(
               gameBloc: gameBloc,
               images: loadingBloc.images,
               audioBloc: audioBloc,

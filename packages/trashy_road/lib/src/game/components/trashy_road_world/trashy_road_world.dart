@@ -22,8 +22,8 @@ enum _TiledLayer {
   final String name;
 }
 
-class TrashyRoadWorld extends PositionComponent {
-  TrashyRoadWorld({
+class TrashyTownWorld extends PositionComponent {
+  TrashyTownWorld({
     required this.tileMap,
   });
 
@@ -66,7 +66,7 @@ class TrashyRoadWorld extends PositionComponent {
 
 class _TiledFloor extends Component
     with
-        HasGameReference<TrashyRoadGame>,
+        HasGameReference<TrashyTownGame>,
         FlameBlocReader<GameBloc, GameState> {
   late final Sprite _sprite;
 
