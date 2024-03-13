@@ -41,7 +41,7 @@
   <object id="3" x="0" y="320" width="512" height="1280"/>
   <object id="4" x="3328" y="320" width="512" height="1280"/>
  </objectgroup>
- <objectgroup id="4" name="Obstacles" visible="0">
+ <objectgroup id="4" name="Obstacles">
   <object id="7" template="bench.tx" class="bench" gid="20" x="1664" y="384" width="128" height="64"/>
   <object id="8" template="bench.tx" class="bench" gid="20" x="2048" y="384" width="128" height="64"/>
   <object id="9" template="bush_2.tx" class="bush_2" gid="14" x="1792" y="384" width="128" height="128"/>
@@ -170,7 +170,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup id="6" name="TrashLayer" visible="0">
+ <objectgroup id="6" name="TrashLayer">
   <object id="105" template="trash_paper.tx" name="paper" class="trash" gid="34" x="896" y="1600" width="128" height="64">
    <properties>
     <property name="type" value="paper"/>
@@ -196,22 +196,12 @@
     <property name="type" value="plastic"/>
    </properties>
   </object>
-  <object id="110" template="trash_plastic.tx" name="plastic" class="trash" gid="35" x="512" y="1344" width="128" height="64">
-   <properties>
-    <property name="type" value="plastic"/>
-   </properties>
-  </object>
   <object id="111" template="trash_plastic.tx" name="plastic" class="trash" gid="35" x="2048" y="704" width="128" height="64">
    <properties>
     <property name="type" value="plastic"/>
    </properties>
   </object>
   <object id="112" template="trash_plastic.tx" name="plastic" class="trash" gid="35" x="2816" y="1408" width="128" height="64">
-   <properties>
-    <property name="type" value="plastic"/>
-   </properties>
-  </object>
-  <object id="113" template="trash_plastic.tx" name="plastic" class="trash" gid="35" x="3200" y="1600" width="128" height="64">
    <properties>
     <property name="type" value="plastic"/>
    </properties>
@@ -236,13 +226,8 @@
     <property name="type" value="organic"/>
    </properties>
   </object>
-  <object id="118" template="trash_organic.tx" name="organic" class="trash" gid="3" x="3072" y="1216" width="128" height="64">
-   <properties>
-    <property name="type" value="organic"/>
-   </properties>
-  </object>
  </objectgroup>
- <objectgroup id="7" name="CoreItemsLayer" visible="0" locked="1">
+ <objectgroup id="7" name="CoreItemsLayer" locked="1">
   <object id="6" template="trash_can_park_plastic.tx" name="trash_can_plastic_park" class="trash_can" gid="40" x="1536" y="448" width="128" height="128">
    <properties>
     <property name="type" value="plastic"/>
