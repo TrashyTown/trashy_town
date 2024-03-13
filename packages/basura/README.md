@@ -1,3 +1,3 @@
 # Basura
 
-Flutter widgets and themes implementing the Trashy Road design language, named "Basura".
+Flutter widgets and themes implementing the Trashy Town design language, named "Basura".
