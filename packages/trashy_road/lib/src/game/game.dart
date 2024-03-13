@@ -184,6 +184,6 @@ class _CameraMan extends PositionComponent
   void _updatePosition() {
     position
       ..setFrom(actor.position)
-      ..y -= game.camera.viewport.size.y / 4.25;
+      ..y -= game.camera.viewport.size.y / 8;
   }
 }
