@@ -1,0 +1,42 @@
+name: Ephemeral Preview Deploy
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    name: Publish to Cloudflare Pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      # set working direction to packages/trashy_road
+
+      - name: build
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "3.19.3"
+          channel: "stable"
+
+      - run: flutter build web --release --web-renderer canvaskit
+        working-directory: packages/trashy_road
+
+      # Run a build step here if your project requires
+      - name: Publish to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ade0ebb1914a3aff54236c4fb27f7b15
+          projectName: trashy-town
+          directory: build/web
+          # Optional: Enable this if you want to have GitHub Deployments triggered
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+          # Optional: Change the working directory
+          workingDirectory: packages/trashy_road
+          # Optional: Change the Wrangler version, allows you to point to a specific version or a tag such as `beta`
+          wranglerVersion: "3"
