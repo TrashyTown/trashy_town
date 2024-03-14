@@ -90,7 +90,7 @@ class GameMapsState extends Equatable {
               displayName: '6',
               path: Assets.tiles.map6,
               score: null,
-              ratingSteps: (35, 60, 110),
+              ratingSteps: (45, 70, 110),
               locked: true,
             ),
             GameMapIdentifier.map7: GameMap._(
@@ -98,7 +98,7 @@ class GameMapsState extends Equatable {
               displayName: '7',
               path: Assets.tiles.map7,
               score: null,
-              ratingSteps: (45, 60, 100),
+              ratingSteps: (65, 80, 100),
               locked: true,
             ),
             GameMapIdentifier.map8: GameMap._(
@@ -106,7 +106,7 @@ class GameMapsState extends Equatable {
               displayName: '8',
               path: Assets.tiles.map8,
               score: null,
-              ratingSteps: (45, 60, 120),
+              ratingSteps: (65, 80, 120),
               locked: true,
             ),
             GameMapIdentifier.map9: GameMap._(
@@ -114,7 +114,7 @@ class GameMapsState extends Equatable {
               displayName: '9',
               path: Assets.tiles.map9,
               score: null,
-              ratingSteps: (45, 70, 120),
+              ratingSteps: (65, 90, 120),
               locked: true,
             ),
             GameMapIdentifier.map10: GameMap._(
@@ -130,7 +130,7 @@ class GameMapsState extends Equatable {
               displayName: '11',
               path: Assets.tiles.map11,
               score: null,
-              ratingSteps: (25, 50, 100),
+              ratingSteps: (35, 50, 100),
               locked: true,
             ),
           },
