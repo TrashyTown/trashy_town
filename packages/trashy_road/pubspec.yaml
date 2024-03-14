@@ -62,3 +62,4 @@ flutter:
     - assets/images/maps/
     - assets/images/display/
     - assets/images/sprites/
+    - assets/static/
