@@ -43,7 +43,9 @@ class RoadLane extends PositionedEntity with ZIndex {
   }) : super(
           behaviors: [VehicleSpawningBehavior()],
         ) {
-    zIndex = super.position.y.floor();
+    // One tile added on because the cars are spawned one tile below road lane
+    // positioning
+    zIndex = super.position.y.floor() + GameSettings.gridDimensions.y.toInt();
   }
 
   /// Derives a [Player] from a [TiledObject].
