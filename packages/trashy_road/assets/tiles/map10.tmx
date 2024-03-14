@@ -123,7 +123,7 @@
     <property name="type" value="plastic"/>
    </properties>
   </object>
-  <object id="143" template="trash_paper.tx" name="paper" class="trash" gid="34" x="1024" y="1152" width="128" height="64">
+  <object id="143" template="trash_paper.tx" name="paper" class="trash" gid="34" x="1024" y="1088" width="128" height="64">
    <properties>
     <property name="type" value="paper"/>
    </properties>
@@ -156,7 +156,7 @@
  </objectgroup>
  <objectgroup id="7" name="CoreItemsLayer">
   <object id="80" template="spawn.tx" name="player" class="player" x="1152" y="1088"/>
-  <object id="85" template="trash_can_plastic.tx" name="trash_can_plastic_city" class="trash_can" gid="4" x="768" y="640" width="128" height="128">
+  <object id="85" template="trash_can_plastic.tx" name="trash_can_plastic_city" class="trash_can" gid="4" x="768" y="704" width="128" height="128">
    <properties>
     <property name="type" value="plastic"/>
     <property name="variant" value="city"/>
