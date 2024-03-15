@@ -119,6 +119,16 @@ class $AssetsRiveGen {
   List<RiveGenImage> get values => [ratingAnimation, starAnimation];
 }
 
+class $AssetsStaticGen {
+  const $AssetsStaticGen();
+
+  /// File path: assets/static/privacy-policy.html
+  String get privacyPolicy => 'assets/static/privacy-policy.html';
+
+  /// List of all assets
+  List<String> get values => [privacyPolicy];
+}
+
 class $AssetsTilesGen {
   const $AssetsTilesGen();
 
@@ -923,15 +933,16 @@ class Assets {
   static const $AssetsAudioGen audio = $AssetsAudioGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsRiveGen rive = $AssetsRiveGen();
+  static const $AssetsStaticGen static = $AssetsStaticGen();
   static const $AssetsTilesGen tiles = $AssetsTilesGen();
-  static const String trashyTownTiledProject =
+  static const String trashyRoadTiledProject =
       'assets/trashy_road.tiled-project';
-  static const String trashyTownTiledSession =
+  static const String trashyRoadTiledSession =
       'assets/trashy_road.tiled-session';
 
   /// List of all assets
   static List<String> get values =>
-      [trashyTownTiledProject, trashyTownTiledSession];
+      [trashyRoadTiledProject, trashyRoadTiledSession];
 }
 
 class AssetGenImage {
