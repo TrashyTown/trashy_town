@@ -22,6 +22,7 @@ jobs:
   build:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
+      format_directories: "lib/src test"
       coverage_excludes: "*.gen.dart"
       working_directory: "packages/trashy_road"
       min_coverage: 0
