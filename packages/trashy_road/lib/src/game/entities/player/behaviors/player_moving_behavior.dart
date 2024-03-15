@@ -16,7 +16,10 @@ final class PlayerMovingBehavior extends Behavior<Player>
         ParentIsA<Player>,
         HasGameReference<TrashyTownGame> {
   /// The delay between player moves for each item in the inventory.
-  static const delayPerItem = Duration(milliseconds: 25);
+  static const _delayPerItem = Duration(milliseconds: 25);
+
+  /// The buffer time between the player's movement and the next move.
+  static const _movementBufferTime = Duration(milliseconds: 50);
 
   /// The base time it takes for the player to move from one position to
   /// another.
@@ -103,11 +106,11 @@ final class PlayerMovingBehavior extends Behavior<Player>
     _isMoving = true;
 
     final delayMilliseconds =
-        (bloc.state.inventory.items.length * delayPerItem.inMilliseconds) +
+        (bloc.state.inventory.items.length * _delayPerItem.inMilliseconds) +
             baseMoveTime.inMilliseconds;
     moveDelay = Duration(milliseconds: delayMilliseconds);
 
-    _nextMoveTime = now.add(moveDelay);
+    _nextMoveTime = now.add(moveDelay - _movementBufferTime);
   }
 
   void bounceBack() {
