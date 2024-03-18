@@ -24,6 +24,7 @@ class Player extends PositionedEntity with ZIndex {
             ),
             PlayerCollectingTrashBehavior(),
             PlayerDepositingTrashBehavior(),
+            PlayerPushingBehavior(),
             PlayerObstacleBehavior(),
             PlayerHintingBehavior(),
             PausingBehavior<Player>(
