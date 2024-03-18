@@ -87,12 +87,8 @@ class PlayPage extends StatelessWidget {
           ),
           if (kIsWeb)
             const Align(
-              alignment: Alignment(0, 0.8),
-              child: SizedBox(
-                width: 150,
-                height: 150,
-                child: _GitHubLink(),
-              ),
+              alignment: Alignment(0, 0.95),
+              child: _GitHubLink(),
             ),
         ],
       ),
@@ -116,15 +112,16 @@ class _GitHubLink extends StatelessWidget {
     return AnimatedHoverBrightness(
       child: GestureDetector(
         onTap: _onTap,
-        child: _PaperBackground(
-          child: Padding(
-            padding: const EdgeInsets.all(32),
-            child: DefaultTextStyle(
-              style: theme.textTheme.gitHubLink,
-              child: AutoSizeText(
-                l10n.checkOutTheCode,
-                textAlign: TextAlign.center,
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: DefaultTextStyle(
+            style: theme.textTheme.gitHubLink.copyWith(
+              fontSize: 16,
+              color: BasuraColors.white,
+            ),
+            child: AutoSizeText(
+              l10n.checkOutTheCode,
+              textAlign: TextAlign.center,
             ),
           ),
         ),
