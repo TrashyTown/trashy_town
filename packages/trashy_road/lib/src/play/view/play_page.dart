@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:trashy_road/gen/assets.gen.dart';
 import 'package:trashy_road/l10n/l10n.dart';
 import 'package:trashy_road/src/maps/maps.dart';
-import 'package:universal_html/html.dart' as html;
+import 'package:url_launcher/url_launcher.dart';
 
 class PlayPage extends StatelessWidget {
   const PlayPage({super.key});
@@ -99,10 +99,11 @@ class PlayPage extends StatelessWidget {
 class _GitHubLink extends StatelessWidget {
   const _GitHubLink();
 
-  static const _repositoryUrl = 'https://github.com/alestiago/trashy_town';
+  static final _repositoryUrl =
+      Uri.parse('https://github.com/alestiago/trashy_town');
 
   void _onTap() {
-    html.window.open(_repositoryUrl, 'new tab');
+    launchUrl(_repositoryUrl);
   }
 
   @override

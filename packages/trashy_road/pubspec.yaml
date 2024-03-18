@@ -1,5 +1,6 @@
 name: trashy_road
-description: "A sustainable, family-friendly game that promotes collectively cleaning public spaces and recycling."
+description: "A sustainable, family-friendly game that promotes collectively
+  cleaning public spaces and recycling."
 publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 version: 1.0.0+1
@@ -37,7 +38,7 @@ dependencies:
   path_provider: ^2.1.2
   rive: ^0.12.4
   tiled: ^0.10.2
-  universal_html: ^2.2.4
+  url_launcher: ^6.2.5
 
 dev_dependencies:
   build_runner: null
