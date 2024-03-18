@@ -87,11 +87,11 @@ final class PlayerMovingBehavior extends Behavior<Player>
   /// Calculates the delay between player moves based on the inventory's size.
   ///
   /// This equates to roughly the following values.
-  /// 1 trash: 153ms
-  /// 2 trash: 161ms
-  /// 3 trash: 179ms
-  /// 4 trash: 217ms
-  /// 5 trash: 275ms
+  /// 1 trash: 153ms (+0ms)
+  /// 2 trash: 161ms (+8ms)
+  /// 3 trash: 179ms (+26ms)
+  /// 4 trash: 217ms (+64ms)
+  /// 5 trash: 275ms (+122ms)
   ///
   /// The goal of this is to make the game feel more challenging as the player
   /// collects more trash.
