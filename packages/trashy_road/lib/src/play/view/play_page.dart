@@ -115,7 +115,7 @@ class _GitHubLink extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(4),
           child: DefaultTextStyle(
-            style: theme.textTheme.gitHubLink.copyWith(
+            style: theme.textTheme.button.copyWith(
               fontSize: 16,
               color: BasuraColors.white,
             ),
