@@ -115,6 +115,10 @@ class PlayerHintingBehavior extends Behavior<Player>
       return;
     }
 
+    if (bloc.state.inventory.isFull) {
+      return;
+    }
+
     _lastVisibleTrash = _isTrashVisible ? 0 : _lastVisibleTrash + dt;
     _lastHint += dt;
 
