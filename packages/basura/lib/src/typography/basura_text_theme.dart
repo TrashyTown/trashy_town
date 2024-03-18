@@ -79,7 +79,7 @@ class BasuraTextThemeData extends Equatable {
   /// A text style for card subheadings.
   final TextStyle cardSubheading;
 
-  /// A text style for buttons.
+  /// A text style for the github link.
   final TextStyle gitHubLink;
 
   @override
