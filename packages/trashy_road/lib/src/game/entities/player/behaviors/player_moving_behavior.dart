@@ -16,7 +16,10 @@ final class PlayerMovingBehavior extends Behavior<Player>
         ParentIsA<Player>,
         HasGameReference<TrashyTownGame> {
   /// The delay between player moves for each item in the inventory.
-  static const _delayPerItem = Duration(milliseconds: 25);
+  static const _maxMovementDelay = Duration(milliseconds: 125);
+
+  /// The curve used to calculate the delay between player moves.
+  static const _delayCurve = Curves.easeInCubic;
 
   /// The buffer time between the player's movement and the next move.
   static const _movementBufferTime = Duration(milliseconds: 50);
@@ -81,6 +84,28 @@ final class PlayerMovingBehavior extends Behavior<Player>
     }
   }
 
+  /// Calculates the delay between player moves based on the inventory's size.
+  ///
+  /// This equates to roughly the following values.
+  /// 1 trash: 153ms
+  /// 2 trash: 161ms
+  /// 3 trash: 179ms
+  /// 4 trash: 217ms
+  /// 5 trash: 275ms
+  ///
+  /// The goal of this is to make the game feel more challenging as the player
+  /// collects more trash.
+  Duration calculateMoveDelay() {
+    final weightCompensation = _delayCurve
+            .transform(bloc.state.inventory.items.length / Inventory.size) *
+        _maxMovementDelay.inMilliseconds;
+
+    final delayMilliseconds =
+        weightCompensation.toInt() + baseMoveTime.inMilliseconds;
+
+    return Duration(milliseconds: delayMilliseconds);
+  }
+
   void move(Direction direction) {
     final isFirstInteraction = bloc.state.status == GameStatus.ready;
     if (isFirstInteraction) {
@@ -105,11 +130,7 @@ final class PlayerMovingBehavior extends Behavior<Player>
     parent.hop(direction);
     _isMoving = true;
 
-    final delayMilliseconds =
-        (bloc.state.inventory.items.length * _delayPerItem.inMilliseconds) +
-            baseMoveTime.inMilliseconds;
-    moveDelay = Duration(milliseconds: delayMilliseconds);
-
+    moveDelay = calculateMoveDelay();
     _nextMoveTime = now.add(moveDelay - _movementBufferTime);
   }
 
