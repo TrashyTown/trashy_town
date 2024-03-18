@@ -1,6 +1,3 @@
-// ignore: avoid_web_libraries_in_flutter
-import 'dart:html' as html;
-
 import 'package:basura/basura.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart' show kIsWeb;
@@ -9,6 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:trashy_road/gen/assets.gen.dart';
 import 'package:trashy_road/l10n/l10n.dart';
 import 'package:trashy_road/src/maps/maps.dart';
+import 'package:universal_html/html.dart' as html;
 
 class PlayPage extends StatelessWidget {
   const PlayPage({super.key});
