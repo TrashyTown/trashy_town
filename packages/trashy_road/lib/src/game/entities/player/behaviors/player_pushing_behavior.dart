@@ -30,6 +30,10 @@ class PlayerPushingBehavior extends CollisionBehavior<Pushable, Player> {
         ..x = 0
         ..y = direction.y.sign;
     }
-    other.findBehavior<PushableMovingBehavior>().push(-direction);
+    final canPush =
+        other.findBehavior<PushableMovingBehavior>().push(-direction);
+    if (!canPush) {
+      parent.findBehavior<PlayerMovingBehavior>().bounceBack();
+    }
   }
 }

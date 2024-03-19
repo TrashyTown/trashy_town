@@ -12,7 +12,9 @@ class PushableMovingBehavior extends Behavior<Pushable> {
   /// it will be lerped until [_targetPosition] is reached by the [Pushable].
   final Vector2 _targetPosition = Vector2.zero();
 
-  void push(Vector2 direction) {
+  final Vector2 _cacheVector = Vector2.zero();
+
+  bool push(Vector2 direction) {
     if (direction.x + direction.y > 1 ||
         (direction.x != 0 && direction.y != 0)) {
       throw ArgumentError.value(
@@ -21,12 +23,26 @@ class PushableMovingBehavior extends Behavior<Pushable> {
         'The direction must be a unit vector.',
       );
     }
-
-    _targetPosition
+    _cacheVector
+      ..setFrom(_targetPosition)
       ..add(
         direction..toGameSize(),
       )
       ..snap();
+
+    final world = ancestors().whereType<TrashyTownWorld>().first;
+    final mapEdges = world.descendants().whereType<MapEdge>().toSet();
+
+    final isInMapEdge = mapEdges.any(
+      (element) => element.isPointInside(_cacheVector + parent.hitbox.position),
+    );
+
+    if (isInMapEdge) {
+      return false;
+    }
+
+    _targetPosition.setFrom(_cacheVector);
+    return true;
   }
 
   @override
