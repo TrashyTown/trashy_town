@@ -13,8 +13,8 @@ class PushableMovingBehavior extends Behavior<Pushable> {
   final Vector2 _targetPosition = Vector2.zero();
 
   void push(Vector2 direction) {
-    if (direction.x + direction.y > 1 &&
-        (direction.x == 0 || direction.y == 0)) {
+    if (direction.x + direction.y > 1 ||
+        (direction.x != 0 && direction.y != 0)) {
       throw ArgumentError.value(
         direction,
         'direction',
@@ -38,7 +38,6 @@ class PushableMovingBehavior extends Behavior<Pushable> {
   @override
   void update(double dt) {
     super.update(dt);
-
-    parent.position.lerp(_targetPosition, 0.5);
+    parent.position.lerp(_targetPosition, 0.7);
   }
 }

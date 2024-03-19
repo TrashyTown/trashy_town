@@ -117,7 +117,7 @@ final class PlayerMovingBehavior extends Behavior<Player>
     if (now.isBefore(_nextMoveTime) || _isMoving) {
       return;
     }
-    _targetPosition.setFrom(parent.position);
+    _targetPosition.setFrom(Player.snapToGrid(parent.position));
     if (direction == Direction.left) {
       _targetPosition.x -= GameSettings.gridDimensions.x;
     } else if (direction == Direction.right) {
@@ -127,6 +127,7 @@ final class PlayerMovingBehavior extends Behavior<Player>
     } else if (direction == Direction.up) {
       _targetPosition.y -= GameSettings.gridDimensions.y;
     }
+
     parent.hop(direction);
     _isMoving = true;
 

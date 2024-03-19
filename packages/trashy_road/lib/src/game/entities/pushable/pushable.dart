@@ -15,7 +15,8 @@ class Pushable extends PositionedEntity with ZIndex {
       : this._(
           position: position,
           hitbox: RectangleHitbox(
-            size: Vector2(1, 1)..toGameSize(),
+            position: Vector2(0.25, -0.25)..toGameSize(),
+            size: Vector2(0.5, 0.5)..toGameSize(),
           ),
           children: [
             RectangleComponent(
@@ -39,7 +40,7 @@ class Pushable extends PositionedEntity with ZIndex {
               minDuration: 0.15,
             ),
             PushableMovingBehavior(),
-            PushableObstacleBehavior(),
+            PushableUntraversableBehavior(),
           ],
         ) {
     zIndex = position.y.floor();

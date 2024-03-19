@@ -18,7 +18,7 @@ import 'package:trashy_road/src/game/game.dart';
 /// See also:
 ///
 /// * [Untraversable], which marks a component as untraversable.
-/// * [PlayerObstacleBehavior], which makes the player unable to traverse
+/// * [PlayerUntraversableBehavior], which makes the player unable to traverse
 ///  through an [Untraversable] component.
 class MapEdge extends PositionedEntity with Untraversable, ZIndex {
   /// Derives a [MapEdge] from a [TiledObject].

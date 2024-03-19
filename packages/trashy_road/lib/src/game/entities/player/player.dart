@@ -25,7 +25,7 @@ class Player extends PositionedEntity with ZIndex {
             PlayerCollectingTrashBehavior(),
             PlayerDepositingTrashBehavior(),
             PlayerPushingBehavior(),
-            PlayerObstacleBehavior(),
+            PlayerUntraversableBehavior(),
             PlayerHintingBehavior(),
             PausingBehavior<Player>(
               selector: (player) => {
@@ -57,14 +57,14 @@ class Player extends PositionedEntity with ZIndex {
     }
 
     final objectPosition = Vector2(tiledObject.x, tiledObject.y);
-    final snappedPosition = _snapToGrid(objectPosition);
+    final snappedPosition = snapToGrid(objectPosition);
 
     return Player(
       position: snappedPosition,
     );
   }
 
-  static Vector2 _snapToGrid(Vector2 vector) {
+  static Vector2 snapToGrid(Vector2 vector) {
     return vector -
         (vector % GameSettings.gridDimensions) +
         (GameSettings.gridDimensions / 2);
