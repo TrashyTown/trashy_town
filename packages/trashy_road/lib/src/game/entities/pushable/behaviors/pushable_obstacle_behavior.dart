@@ -4,11 +4,11 @@ import 'package:trashy_road/src/game/game.dart';
 
 /// Communicates to the [PlayerKeyboardMovingBehavior] that the player
 /// has collided with an [Untraversable] component.
-class PlayerPushingBehavior extends CollisionBehavior<Pushable, Player> {
+class PushableObstacleBehavior extends CollisionBehavior<Obstacle, Pushable> {
   @override
   void onCollisionStart(
     Set<Vector2> intersectionPoints,
-    Pushable other,
+    Obstacle other,
   ) {
     super.onCollisionStart(intersectionPoints, other);
     // get average position of intersection points
@@ -17,7 +17,7 @@ class PlayerPushingBehavior extends CollisionBehavior<Pushable, Player> {
         ) /
         intersectionPoints.length.toDouble();
 
-    final hitboxCentre = other.hitbox.absoluteCenter;
+    final hitboxCentre = parent.hitbox.absoluteCenter;
 
     final direction = averagePosition - hitboxCentre;
 
@@ -30,7 +30,6 @@ class PlayerPushingBehavior extends CollisionBehavior<Pushable, Player> {
         ..x = 0
         ..y = direction.y.sign;
     }
-    parent.findBehavior<PlayerMovingBehavior>().bounceBack();
-    other.findBehavior<PushableMovingBehavior>().push(-direction);
+    parent.findBehavior<PushableMovingBehavior>().push(-direction);
   }
 }

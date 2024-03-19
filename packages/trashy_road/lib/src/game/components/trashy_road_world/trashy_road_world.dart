@@ -5,7 +5,6 @@ import 'package:flame/components.dart';
 import 'package:flame_bloc/flame_bloc.dart';
 import 'package:flame_tiled/flame_tiled.dart';
 import 'package:tiled/tiled.dart';
-import 'package:trashy_road/game_settings.dart';
 import 'package:trashy_road/gen/assets.gen.dart';
 import 'package:trashy_road/src/game/game.dart';
 import 'package:trashy_road/src/maps/maps.dart';
@@ -62,7 +61,7 @@ class TrashyTownWorld extends PositionComponent {
 
     await add(
       Pushable.box(
-        position: Vector2(909, 1024),
+        position: Vector2(896, 1024),
       ),
     );
 

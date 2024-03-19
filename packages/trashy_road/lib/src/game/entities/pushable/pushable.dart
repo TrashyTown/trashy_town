@@ -3,8 +3,9 @@ import 'package:flame/components.dart';
 import 'package:flame_behaviors/flame_behaviors.dart';
 import 'package:flutter/material.dart';
 import 'package:trashy_road/game_settings.dart';
-import 'package:trashy_road/src/game/entities/entities.dart';
 import 'package:trashy_road/src/game/game.dart';
+
+export 'behaviors/behaviors.dart';
 
 class Pushable extends PositionedEntity with ZIndex {
   // An pushable box.
@@ -37,22 +38,11 @@ class Pushable extends PositionedEntity with ZIndex {
               drop: Vector2(0, -50),
               minDuration: 0.15,
             ),
+            PushableMovingBehavior(),
+            PushableObstacleBehavior(),
           ],
         ) {
     zIndex = position.y.floor();
-  }
-
-  void push(Vector2 direction) {
-    if (direction.x + direction.y > 1 &&
-        (direction.x == 0 || direction.y == 0)) {
-      throw ArgumentError.value(
-        direction,
-        'direction',
-        'The direction must be a unit vector.',
-      );
-    }
-
-    position += direction..toGameSize();
   }
 
   @override
