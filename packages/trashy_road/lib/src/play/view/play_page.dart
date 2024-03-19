@@ -1,9 +1,12 @@
 import 'package:basura/basura.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:trashy_road/gen/assets.gen.dart';
+import 'package:trashy_road/l10n/l10n.dart';
 import 'package:trashy_road/src/maps/maps.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PlayPage extends StatelessWidget {
   const PlayPage({super.key});
@@ -82,7 +85,47 @@ class PlayPage extends StatelessWidget {
               child: _PlayButton(),
             ),
           ),
+          if (kIsWeb)
+            const Align(
+              alignment: Alignment(0, 0.95),
+              child: _GitHubLink(),
+            ),
         ],
+      ),
+    );
+  }
+}
+
+class _GitHubLink extends StatelessWidget {
+  const _GitHubLink();
+
+  static final _repositoryUrl =
+      Uri.parse('https://github.com/alestiago/trashy_town');
+
+  void _onTap() {
+    launchUrl(_repositoryUrl);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = BasuraTheme.of(context);
+    final l10n = context.l10n;
+    return AnimatedHoverBrightness(
+      child: GestureDetector(
+        onTap: _onTap,
+        child: Padding(
+          padding: const EdgeInsets.all(4),
+          child: DefaultTextStyle(
+            style: theme.textTheme.button.copyWith(
+              fontSize: 16,
+              color: BasuraColors.white,
+            ),
+            child: AutoSizeText(
+              l10n.checkOutTheCode,
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
       ),
     );
   }
