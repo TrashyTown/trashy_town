@@ -58,6 +58,12 @@ class TrashyTownWorld extends PositionComponent {
 
     await addAll(Bird.randomAmount());
 
+    await add(
+      Pushable.box(
+        position: Vector2(896, 1024),
+      ),
+    );
+
     await add(_TiledFloor());
 
     size = Vector2(tileMap.width.toDouble(), tileMap.height.toDouble());

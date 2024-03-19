@@ -5,3 +5,4 @@ export 'player_hinting_behavior.dart';
 export 'player_keyboard_moving_behavior.dart';
 export 'player_moving_behavior.dart';
 export 'player_obstacle_behavior.dart';
+export 'player_pushing_behavior.dart';
