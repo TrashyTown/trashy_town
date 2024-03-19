@@ -73,9 +73,5 @@ class BasuraTextThemeData extends Equatable {
   final TextStyle cardSubheading;
 
   @override
-  List<Object?> get props => [
-        button,
-        cardHeading,
-        cardSubheading,
-      ];
+  List<Object?> get props => [button, cardHeading, cardSubheading];
 }
