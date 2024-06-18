@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:basura/basura.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tiled/tiled.dart';
 import 'package:trashy_road/gen/gen.dart';
@@ -98,11 +99,13 @@ class _GameViewState extends State<_GameView> {
                   child: InventoryHud(),
                 ),
               ),
-              const Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: EdgeInsets.all(12),
-                  child: TopHud(),
+              const SafeArea(
+                child: Align(
+                  alignment: Alignment.topCenter,
+                  child: Padding(
+                    padding: EdgeInsets.all(12),
+                    child: TopHud(),
+                  ),
                 ),
               ),
               if (isTutorial)
